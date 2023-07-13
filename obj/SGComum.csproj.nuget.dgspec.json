@@ -1,0 +1,69 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\SGBr\\sg-comum\\SGComum.csproj": {}
+  },
+  "projects": {
+    "D:\\SGBr\\sg-comum\\SGComum.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\SGBr\\sg-comum\\SGComum.csproj",
+        "projectName": "SGComum",
+        "projectPath": "D:\\SGBr\\sg-comum\\SGComum.csproj",
+        "packagesPath": "C:\\Users\\Edenilson\\.nuget\\packages\\",
+        "outputPath": "D:\\SGBr\\sg-comum\\obj\\",
+        "projectStyle": "PackageReference",
+        "skipContentFileWrite": true,
+        "configFilePaths": [
+          "C:\\Users\\Edenilson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "D:\\SGBr\\base-master\\Nuget fast report": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "FirebirdSql.EntityFrameworkCore.Firebird": {
+              "target": "Package",
+              "version": "[7.10.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.32, )"
+            },
+            "MySql.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.1.30, )"
+            }
+          }
+        }
+      },
+      "runtimes": {
+        "win": {
+          "#import": []
+        },
+        "win-arm64": {
+          "#import": []
+        },
+        "win-x64": {
+          "#import": []
+        },
+        "win-x86": {
+          "#import": []
+        }
+      }
+    }
+  }
+}
