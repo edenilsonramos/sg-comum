@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using Mysqlx.Crud;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace SGComum.Database.Models
@@ -31,7 +33,7 @@ namespace SGComum.Database.Models
         public decimal? ValorUnitario { get; set; }
 
         [Browsable(false)]
-        public decimal? valorDesconto { get; set; }
+        public decimal? ValorDesconto { get; set; }
 
         [Browsable(false)]
         public decimal? ValorLiquido { get; set; }
@@ -53,6 +55,9 @@ namespace SGComum.Database.Models
         
         [Browsable(false)]
         public virtual PedidoAmo PedidoAmo { get; set; }
+
+        [Browsable(false)]
+        public virtual ICollection<ItemDeliveryAdicionais> Adicionais { get; set; }
     }
     public class ItemPedidoAmoEntityTypeConfiguration : IEntityTypeConfiguration<ItemPedidoAmo>
     {
@@ -77,7 +82,7 @@ namespace SGComum.Database.Models
 
             builder.Property(e => e.ValorUnitario).HasColumnName("VALORUNITARIO");
 
-            builder.Property(e => e.valorDesconto).HasColumnName("VALORDESCONTO");
+            builder.Property(e => e.ValorDesconto).HasColumnName("VALORDESCONTO");
 
             builder.Property(e => e.ValorLiquido).HasColumnName("VALORLIQUIDO");
 
@@ -90,6 +95,8 @@ namespace SGComum.Database.Models
             builder.Property(e => e.Descricao).HasColumnName("DESCRICAO").HasMaxLength(50);
 
             builder.Property(e => e.IDProduto).HasColumnName("IDPRODUTO");
+
+            builder.HasMany(c => c.Adicionais).WithOne(c => c.ItensPedidoAmo).HasForeignKey(c => c.CodItemPedidoAmo);
         }
     }
 }

@@ -20,6 +20,7 @@ namespace SGComum.Database
         public DbSet<ConfigIfood> ConfigIfood { get; set; }
 
         public DbSet<PedidoAmo> PedidoAmo { get; set; }
+
         public DbSet<ItemPedidoAmo> ItemPedidoAmo { get; set; }
 
         public DbSet<PedidoIfood> PedidoIfood { get; set; }
@@ -37,6 +38,8 @@ namespace SGComum.Database
         public DbSet<PagamentoIfood> PagamentoIfood { get; set; }
 
         public DbSet<PagamentoAmo> PagamentoAmo { get; set; }
+
+        public DbSet<ItemDeliveryAdicionais> ItemDeliveryAdicionais { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -65,6 +68,8 @@ namespace SGComum.Database
             new EnderecoEntregaIfoodEntityTypeConfiguration().Configure(modelBuilder.Entity<EnderecoEntregaIfood>());
 
             new PagamentoIfoodEntityTypeConfiguration().Configure(modelBuilder.Entity<PagamentoIfood>());
+
+            new ItemDeliveryAdicionaisEntityTypeConfiguration().Configure(modelBuilder.Entity<ItemDeliveryAdicionais>());    
 
         }
 

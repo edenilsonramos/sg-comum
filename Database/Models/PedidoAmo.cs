@@ -1,11 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using SGComum.Core;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.ComponentModel.DataAnnotations.Schema;
-using static SGComum.Core.DataTypes;
 
 namespace SGComum.Database.Models
 {
@@ -30,7 +27,7 @@ namespace SGComum.Database.Models
         public string IdResumo { get; set; }
 
         [Browsable(false)]
-        public TipoPedidoDelivery TipoPedido { get; set; }
+        public int TipoPedido { get; set; }
 
         [Browsable(false)]
         public decimal? ValorTaxaEntrega { get; set; }
@@ -66,7 +63,7 @@ namespace SGComum.Database.Models
         public string OBS { get; set; }
         
         [Browsable(false)]
-        public AmoOfertasOrderStatus Status { get; set; }
+        public string Status { get; set; }
 
         [Browsable(false)]
         public string NomeCliente { get; set; }
@@ -113,11 +110,6 @@ namespace SGComum.Database.Models
             builder.Property(e => e.IdResumo).HasColumnName("IDRESUMO");
 
             builder.Property(e => e.TipoPedido).HasColumnName("TIPOPEDIDO");
-
-            builder.Property(e => e.TipoPedido).HasColumnName("TIPOPEDIDO").HasDefaultValue().HasConversion<string>(
-                v => DataTypes.TipoPedidoDeliveryToString(v),
-                v => DataTypes.StringToTipoPedidoDelivery(v)
-            );
 
             builder.Property(e => e.ValorTaxaEntrega).HasColumnName("VALORTAXAENTREGA");
 
