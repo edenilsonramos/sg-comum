@@ -45,9 +45,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\DataTypes.cs" />
+    <Compile Include="Database\Models\ConfigAmo.cs" />
+    <Compile Include="Database\Models\ConfigIfood.cs" />
+    <Compile Include="Database\Models\EnderecoEntregaAmo.cs" />
+    <Compile Include="Database\Models\EnderecoEntregaIfood.cs" />
+    <Compile Include="Database\Models\ItemPedidoAmo.cs" />
+    <Compile Include="Database\Models\ItemPedidoIfood.cs" />
+    <Compile Include="Database\Models\PagamentoAmo.cs" />
+    <Compile Include="Database\Models\PagamentoIfood.cs" />
+    <Compile Include="Database\Models\PedidoAmo.cs" />
     <Compile Include="Core\TipoDriver.cs" />
     <Compile Include="Database\ConnectionParams.cs" />
     <Compile Include="Database\DatabaseHelper.cs" />
+    <Compile Include="Database\Models\PedidoIfood.cs" />
+    <Compile Include="Database\Models\PedidoStatusAmo.cs" />
+    <Compile Include="Database\Models\PedidoStatusIfood.cs" />
     <Compile Include="Database\SGContext.cs" />
     <Compile Include="Extensions\UIExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

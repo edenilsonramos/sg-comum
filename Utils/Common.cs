@@ -1,4 +1,7 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
+using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text.RegularExpressions;
 
 namespace SGComum.Utils
@@ -29,6 +32,29 @@ namespace SGComum.Utils
         public static bool SimNaoToBool(string aString)
         {
             return aString == "SIM";
+        }
+        public static string GetEnderecoMAC()
+        {
+            try
+            {
+                NetworkInterface[] nics = NetworkInterface.GetAllNetworkInterfaces();
+                string enderecoMAC = string.Empty;
+                foreach (NetworkInterface nic in NetworkInterface.GetAllNetworkInterfaces().Where(c => c.NetworkInterfaceType == NetworkInterfaceType.Ethernet && c.Description.Contains("Virtual") == false).ToList())
+                {
+                    {
+                        if (nic.NetworkInterfaceType == NetworkInterfaceType.Ethernet &&
+                            nic.OperationalStatus == OperationalStatus.Up)
+                        {
+                            enderecoMAC = nic.GetPhysicalAddress().ToString();
+                        }
+                    }
+                }
+                return enderecoMAC;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
         }
     }
 }

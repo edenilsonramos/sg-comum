@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SGComum.Database.Models;
 using SGMeuSG.Core;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,59 @@ namespace SGComum.Database
         public SGContext(ConnectionParams connectionParams) : base()
         {
             ConnectionParams = connectionParams;
+        }
+
+        public DbSet<ConfigAmo> ConfigAmo { get; set; }
+
+        public DbSet<ConfigIfood> ConfigIfood { get; set; }
+
+        public DbSet<PedidoAmo> PedidoAmo { get; set; }
+        public DbSet<ItemPedidoAmo> ItemPedidoAmo { get; set; }
+
+        public DbSet<PedidoIfood> PedidoIfood { get; set; }
+
+        public DbSet<ItemPedidoIfood> ItemPedidoIfood { get; set; }
+
+        public DbSet<EnderecoEntregaAmo> EnderecoEntregaAmo { get; set; }
+
+        public DbSet<EnderecoEntregaIfood> EnderecoEntregaIfood { get; set; }
+
+        public DbSet<PedidoStatusIfood> PedidoStatusIfood { get; set; }
+
+        public DbSet<PedidoStatusAmo> PedidoStatusAmo { get; set; }
+
+        public DbSet<PagamentoIfood> PagamentoIfood { get; set; }
+
+        public DbSet<PagamentoAmo> PagamentoAmo { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            new ConfigIfoodEntityTypeConfiguration().Configure(modelBuilder.Entity<ConfigIfood>());
+
+            new ConfigAmoEntityTypeConfiguration().Configure(modelBuilder.Entity<ConfigAmo>());
+
+            new PedidoAmoEntityTypeConfiguration().Configure(modelBuilder.Entity<PedidoAmo>());
+
+            new ItemPedidoAmoEntityTypeConfiguration().Configure(modelBuilder.Entity<ItemPedidoAmo>());
+
+            new PedidoStatusAmoEntityTypeConfiguration().Configure(modelBuilder.Entity<PedidoStatusAmo>());
+
+            new EnderecoEntregaAmoEntityTypeConfiguration().Configure(modelBuilder.Entity<EnderecoEntregaAmo>());
+
+            new PagamentoAmoEntityTypeConfiguration().Configure(modelBuilder.Entity<PagamentoAmo>());
+
+            new PedidoIfoodEntityTypeConfiguration().Configure(modelBuilder.Entity<PedidoIfood>());
+
+            new ItemPedidoIfoodEntityTypeConfiguration().Configure(modelBuilder.Entity<ItemPedidoIfood>());
+
+            new PedidoStatusIfoodEntityTypeConfiguration().Configure(modelBuilder.Entity<PedidoStatusIfood>());
+
+            new EnderecoEntregaIfoodEntityTypeConfiguration().Configure(modelBuilder.Entity<EnderecoEntregaIfood>());
+
+            new PagamentoIfoodEntityTypeConfiguration().Configure(modelBuilder.Entity<PagamentoIfood>());
+
         }
 
         public List<Dictionary<string, dynamic>> ExecuteRawQuery(string Query)
