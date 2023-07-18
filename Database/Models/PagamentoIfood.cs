@@ -47,10 +47,7 @@ namespace SGComum.Database.Models
 
             builder.Property(e => e.Especie).HasColumnName("ESPECIE").HasMaxLength(50);
 
-            builder.Property(e => e.Pago).HasColumnName("PAGO").HasConversion<string>(
-            v => DataTypes.BoolToZeroUmNull(v),
-            v => DataTypes.ZeroUmNullToBool(v)
-            );
+            builder.Property(e => e.Pago).HasColumnName("PAGO").HasMaxLength(1);
 
             builder.Property(e => e.Valor).HasColumnName("VALOR");
         }
