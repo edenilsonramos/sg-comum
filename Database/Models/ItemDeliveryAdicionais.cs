@@ -31,7 +31,7 @@ namespace SGComum.Database.Models
         public decimal? ValorLiquido { get; set; }
 
         [Browsable(false)]
-        public virtual ItemPedidoAmo ItemPedidoAmo { get; set; }
+        public virtual ItemPedidoAmo ItensPedidoAmo { get; set; }
     }
 
     public class ItemDeliveryAdicionaisEntityTypeConfiguration : IEntityTypeConfiguration<ItemDeliveryAdicionais>
@@ -57,7 +57,6 @@ namespace SGComum.Database.Models
             builder.Property(e => e.ValorAcrescimo).HasColumnName("VALORACRESCIMO");
 
             builder.Property(e => e.ValorLiquido).HasColumnName("VALORLIQUIDO");
-
         }
     }
 }

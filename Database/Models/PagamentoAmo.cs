@@ -23,7 +23,7 @@ namespace SGComum.Database.Models
         public string Especie { get; set; }
 
         [Browsable(false)]
-        public bool? Pago { get; set; }
+        public string Pago { get; set; }
 
         [Browsable(false)]
         public decimal? Valor { get; set; }
@@ -51,10 +51,7 @@ namespace SGComum.Database.Models
 
             builder.Property(e => e.Especie).HasColumnName("ESPECIE").HasMaxLength(50);
 
-            builder.Property(e => e.Pago).HasColumnName("PAGO").HasConversion<string>(
-            v => DataTypes.BoolToZeroUmNull(v),
-            v => DataTypes.ZeroUmNullToBool(v)
-            );
+            builder.Property(e => e.Pago).HasColumnName("PAGO").HasMaxLength(1);
 
             builder.Property(e => e.Valor).HasColumnName("VALOR");
 

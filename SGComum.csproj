@@ -49,6 +49,7 @@
     <Compile Include="Database\Models\ConfigIfood.cs" />
     <Compile Include="Database\Models\EnderecoEntregaAmo.cs" />
     <Compile Include="Database\Models\EnderecoEntregaIfood.cs" />
+    <Compile Include="Database\Models\ItemDeliveryAdicionais.cs" />
     <Compile Include="Database\Models\ItemPedidoAmo.cs" />
     <Compile Include="Database\Models\ItemPedidoIfood.cs" />
     <Compile Include="Database\Models\PagamentoAmo.cs" />
