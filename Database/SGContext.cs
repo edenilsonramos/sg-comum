@@ -19,6 +19,12 @@ namespace SGComum.Database
 
         public DbSet<ItemComanda> ItemComanda { get; set; }
 
+        public DbSet<ItemComandaAdicional> ItemComandaAdicional { get; set; }
+
+        public DbSet<MesaReserva> MesaReserva { get; set; }
+
+        public DbSet<FormaPagamentoComanda> FormaPagamentoComanda { get; set; }
+
         public DbSet<ComandaAprovar> ComandaAprovar { get; set; }
 
         public DbSet<ItemComandaAprovar> ItemComandaAprovar { get; set; }
@@ -53,11 +59,19 @@ namespace SGComum.Database
         {
             base.OnModelCreating(modelBuilder);
 
-            new ComandaAprovarEntityTypeConfiguration().Configure(modelBuilder.Entity<ComandaAprovar>());
+            new ComandaEntityTypeConfiguration().Configure(modelBuilder.Entity<Comanda>());
 
             new ItemComandaEntityTypeConfiguration().Configure(modelBuilder.Entity<ItemComanda>());
 
+            new ItemComandaAdicionalEntityTypeConfiguration().Configure(modelBuilder.Entity<ItemComandaAdicional>());
+
+            new MesaReservaEntityTypeConfiguration().Configure(modelBuilder.Entity<MesaReserva>());
+
+            new FormaPagamentoComandaEntityTypeConfiguration().Configure(modelBuilder.Entity<FormaPagamentoComanda>());
+
             new ComandaAprovarEntityTypeConfiguration().Configure(modelBuilder.Entity<ComandaAprovar>());
+            
+            new ItemComandaAprovarEntityTypeConfiguration().Configure(modelBuilder.Entity<ItemComandaAprovar>());
 
             new ConfigIfoodEntityTypeConfiguration().Configure(modelBuilder.Entity<ConfigIfood>());
 

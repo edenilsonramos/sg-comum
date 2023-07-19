@@ -15,9 +15,9 @@ namespace SGComum.Database.Models
         [Browsable(false)]
         public DateTime DataHoraCadastro { get; set; }
 
-        [DisplayName("Cód. cliente")]
-        [Browsable(false)]
-        public Cliente Cliente { get; set; }
+        //[DisplayName("Cód. cliente")]
+        //[Browsable(false)]
+        //public Cliente Cliente { get; set; }
 
         [DisplayName("Número mesa")]
         [Browsable(false)]
@@ -70,7 +70,7 @@ namespace SGComum.Database.Models
 
             builder.Property(c => c.DataHoraCadastro).HasColumnName("DATAHORACADASTRO");
 
-            builder.HasOne(c => c.Cliente).WithMany(c => c.MesaReserva).HasForeignKey(c => c.Controle);
+            //builder.HasOne(c => c.Cliente).WithMany(c => c.MesaReserva).HasForeignKey(c => c.Controle);
 
             builder.Property(c => c.NumeroMesa).HasColumnName("NUMEROMESA").IsRequired();
 

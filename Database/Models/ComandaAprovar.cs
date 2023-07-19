@@ -94,7 +94,7 @@ namespace SGComum.Database.Models
         public DateTime? DataHoraAgendamento { get; set; }
 
         [Browsable(false)]
-        public Comanda Comanda { get; set; }
+        public virtual Comanda Comanda { get; set; }
 
         [Browsable(false)]
         public ICollection<ItemComandaAprovar> Itens { get; set; }
@@ -153,7 +153,6 @@ namespace SGComum.Database.Models
             builder.Property(c => c.CodComandaMeuSG).HasColumnName("CODCOMANDAMEUSG");
 
             builder.Property(c => c.DataHoraAgendamento).HasColumnName("DATAHORAAGENDAMENTO");
-
 
             builder.HasMany(c => c.Itens).WithOne(i => i.ComandaAprovar).HasForeignKey(i => i.CodComandaAprovar).OnDelete(DeleteBehavior.Cascade);
         }
