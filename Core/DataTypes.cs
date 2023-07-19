@@ -132,6 +132,23 @@ namespace SGComum.Core
                     return TipoPedidoDelivery.Retirada;
             }
         }
+        public static bool SimNaoToBool(string aString)
+        {
+            return aString == "SIM";
+        }
+
+        public static string BoolToSimNao(bool aBool)
+        {
+            return aBool ? "SIM" : "NÃO";
+        }
+
+        public static bool? SimNaoNullToBool(string aString)
+        {
+            if (aString == null)
+                return null;
+
+            return aString == "SIM";
+        }
 
         public static string BoolToSimNaoNull(bool? aBool)
         {
@@ -139,11 +156,6 @@ namespace SGComum.Core
                 return null;
 
             return aBool == true ? "SIM" : "NÃO";
-        }
-
-        public static bool SimNaoToBool(string aString)
-        {
-            return aString == "SIM";
         }
 
         public static bool? ZeroUmNullToBool(string aString)

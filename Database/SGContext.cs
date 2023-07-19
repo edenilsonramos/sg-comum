@@ -15,6 +15,14 @@ namespace SGComum.Database
             ConnectionParams = connectionParams;
         }
 
+        public DbSet<Comanda> Comanda { get; set; }
+
+        public DbSet<ItemComanda> ItemComanda { get; set; }
+
+        public DbSet<ComandaAprovar> ComandaAprovar { get; set; }
+
+        public DbSet<ItemComandaAprovar> ItemComandaAprovar { get; set; }
+
         public DbSet<ConfigAmo> ConfigAmo { get; set; }
 
         public DbSet<ConfigIfood> ConfigIfood { get; set; }
@@ -44,6 +52,12 @@ namespace SGComum.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            new ComandaAprovarEntityTypeConfiguration().Configure(modelBuilder.Entity<ComandaAprovar>());
+
+            new ItemComandaEntityTypeConfiguration().Configure(modelBuilder.Entity<ItemComanda>());
+
+            new ComandaAprovarEntityTypeConfiguration().Configure(modelBuilder.Entity<ComandaAprovar>());
 
             new ConfigIfoodEntityTypeConfiguration().Configure(modelBuilder.Entity<ConfigIfood>());
 
