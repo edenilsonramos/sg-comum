@@ -38,7 +38,7 @@ namespace SGComum.Database.Models
     {
         public void Configure(EntityTypeBuilder<EnderecoEntregaAmo> builder)
         {
-            builder.ToTable("TENDERECOENTREGAMO");
+            builder.ToTable("TENDERECOENTREGAAMO");
 
             builder.HasKey(e => e.Controle);
 

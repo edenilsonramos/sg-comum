@@ -10,7 +10,7 @@ namespace SGComum.Database.Models
         public int Controle { get; set; }
 
         [Browsable(false)]
-        public int CodItemPedidoIfood { get; set; }
+        public int? CodItemPedidoIfood { get; set; }
 
         [Browsable(false)]
         public int CodItemPedidoAmo { get; set; }
