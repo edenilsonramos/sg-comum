@@ -37,10 +37,10 @@ namespace SGComum.Core
 
         public enum TipoPedidoDelivery
         {
-            Entrega,
+            Retirada = 0,
+            Entrega = 1,
+            ConsumoLocal = 2,
             Agendado,
-            Retirada,
-            ConsumoLocal,
         }
 
         public enum StatusDeliveryIfood
@@ -63,6 +63,35 @@ namespace SGComum.Core
             local,
             sent,
             awaiting_payment,
+        }
+        public static string TipoPedidoDeliveryToString(TipoPedidoDelivery tipoPedidoDelivery)
+        {
+            switch (tipoPedidoDelivery)
+            {
+                case TipoPedidoDelivery.Entrega:
+                    return "delivery";
+                case TipoPedidoDelivery.Agendado:
+                    return "scheduled";
+                case TipoPedidoDelivery.Retirada:
+                    return "pickup";
+                case TipoPedidoDelivery.ConsumoLocal:
+                    return "local";
+                default:
+                    return "local";
+            }
+        }
+
+        public static TipoPedidoDelivery StringToTipoPedidoDelivery(string aString)
+        {
+            switch (aString)
+            {
+                case "0":
+                    return TipoPedidoDelivery.Entrega;
+                case "1":
+                    return TipoPedidoDelivery.ConsumoLocal;
+                default:
+                    return TipoPedidoDelivery.Retirada;
+            }
         }
 
         public static string StatusDeliveryIfoodToString(StatusDeliveryIfood statusDelivery)
@@ -105,31 +134,6 @@ namespace SGComum.Core
                 default:
                     return StatusDeliveryIfood.PLC;
 
-            }
-        }
-        public static string TipoPedidoDeliveryToString(TipoPedidoDelivery tipoPedidoDelivery)
-        {
-            switch (tipoPedidoDelivery)
-            {
-                case TipoPedidoDelivery.Entrega:
-                    return "0";
-                case TipoPedidoDelivery.ConsumoLocal:
-                    return "1";
-                default:
-                    return "2";
-            }
-        }
-
-        public static TipoPedidoDelivery StringToTipoPedidoDelivery(string aString)
-        {
-            switch (aString)
-            {
-                case "0":
-                    return TipoPedidoDelivery.Entrega;
-                case "1":
-                    return TipoPedidoDelivery.ConsumoLocal;
-                default:
-                    return TipoPedidoDelivery.Retirada;
             }
         }
         public static bool SimNaoToBool(string aString)

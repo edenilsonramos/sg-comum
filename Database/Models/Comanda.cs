@@ -9,6 +9,12 @@ namespace SGComum.Database.Models
 {
     public class Comanda
     {
+        public Comanda()
+        {
+            Itens = new List<ItemComanda>();
+            FormasPagamento = new List<FormaPagamentoComanda>();
+        }
+
         [DisplayName("Mesa")]
         public int? NumeroMesa { get; set; }
 
