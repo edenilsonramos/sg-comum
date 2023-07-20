@@ -1,29 +1,32 @@
 {
   "format": 1,
   "restore": {
-    "D:\\SGBr\\sg-comum\\SGComum.csproj": {}
+    "C:\\Users\\Des8\\source\\repos\\sg-comum\\SGComum.csproj": {}
   },
   "projects": {
-    "D:\\SGBr\\sg-comum\\SGComum.csproj": {
+    "C:\\Users\\Des8\\source\\repos\\sg-comum\\SGComum.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\SGBr\\sg-comum\\SGComum.csproj",
+        "projectUniqueName": "C:\\Users\\Des8\\source\\repos\\sg-comum\\SGComum.csproj",
         "projectName": "SGComum",
-        "projectPath": "D:\\SGBr\\sg-comum\\SGComum.csproj",
-        "packagesPath": "C:\\Users\\Edenilson\\.nuget\\packages\\",
-        "outputPath": "D:\\SGBr\\sg-comum\\obj\\",
+        "projectPath": "C:\\Users\\Des8\\source\\repos\\sg-comum\\SGComum.csproj",
+        "packagesPath": "C:\\Users\\Des8\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Des8\\source\\repos\\sg-comum\\obj\\",
         "projectStyle": "PackageReference",
         "skipContentFileWrite": true,
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Edenilson\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Des8\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net472"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "D:\\SGBr\\base-master\\Nuget fast report": {},
+          "C:\\Users\\Des8\\source\\repos\\base-master\\Nuget fast report": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -52,9 +55,6 @@
       },
       "runtimes": {
         "win": {
-          "#import": []
-        },
-        "win-arm64": {
           "#import": []
         },
         "win-x64": {
